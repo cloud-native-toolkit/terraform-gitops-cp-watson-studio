@@ -6,6 +6,11 @@ description: >-
 tags:
   - tools
   - gitops
+  - watson-studio
+  - ws
+  - cp4d
+  - cpd
+softwareProvider: ibm-cp
 versions:
   - platforms:
       - kubernetes
