@@ -52,11 +52,6 @@ module cp4d-operator {
 
 module cp4d-instance {
   source = "github.com/cloud-native-toolkit/terraform-gitops-cp4d-instance.git"
-
-  environment = {
-      GIT_CREDENTIALS = nonsensitive(yamlencode(var.git_credentials))
-      GITOPS_CONFIG   = yamlencode(var.gitops_config)
-    }
 }
 
 resource null_resource create_subcription_yaml {
