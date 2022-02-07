@@ -92,4 +92,16 @@ variable "cluster_ingress_hostname" {
   default     = ""
 }
 
+variable "operator_namespace" {
+  type        = string
+  description = "operator namespace"
+  default     = "ibm-common-services"
+}
+
+variable "cpd_namespace" {
+  type        = string
+  description = "cpd namespace"
+  default     = ""
+}
+
 
