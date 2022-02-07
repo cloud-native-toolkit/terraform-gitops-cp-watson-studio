@@ -54,8 +54,8 @@ module cp4d-instance {
   source = "github.com/cloud-native-toolkit/terraform-gitops-cp4d-instance.git"
 
   environment = {
-      GIT_CREDENTIALS = nonsensitive(self.triggers.git_credentials)
-      GITOPS_CONFIG   = self.triggers.gitops_config
+      GIT_CREDENTIALS = nonsensitive(yamlencode(var.git_credentials))
+      GITOPS_CONFIG   = yamlencode(var.gitops_config)
     }
 }
 
