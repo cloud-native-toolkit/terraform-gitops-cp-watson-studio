@@ -10,7 +10,7 @@ locals {
   service_url   = "http://${local.name}.${var.namespace}"
   subscription_content = {
     name = "ibm-cpd-ws-operator-catalog-subscription"
-    operator_namespace   = var.namespace
+    operator_namespace = module.cp4d-operator.namespace
     syncWave = "-5"
     spec = {
       channel = "v2.0"
@@ -22,7 +22,7 @@ locals {
   }   
   instance_content = {
     name = "ws-cr"
-    cpd_namespace = "cpd"
+    cpd_namespace = module.cp4d-instance.namespace
     spec = {
       license = {
         accept = "true"
@@ -44,6 +44,14 @@ locals {
 
 module setup_clis {
   source = "github.com/cloud-native-toolkit/terraform-util-clis.git"
+}
+
+module cp4d-operator {
+  source = "github.com/cloud-native-toolkit/terraform-gitops-cp4d-operator.git"
+}
+
+module cp4d-instance {
+  source = "github.com/cloud-native-toolkit/terraform-gitops-cp4d-instance.git"
 }
 
 resource null_resource create_subcription_yaml {

@@ -1,0 +1,13 @@
+# Default values for Watston Studio Operator Subscription.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+name: ibm-cpd-ws-operator-catalog-subscription
+operator_namespace: ibm-common-services
+syncWave: "-5"
+spec:
+  channel: v2.0
+  installPlanApproval: Automatic
+  name: ibm-cpd-wsl
+  source: ibm-operator-catalog
+  sourceNamespace: openshift-marketplace
