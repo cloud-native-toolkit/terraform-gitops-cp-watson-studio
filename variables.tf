@@ -92,6 +92,18 @@ variable "cluster_ingress_hostname" {
   default     = ""
 }
 
+variable "tls_secret_name" {
+  type        = string
+  description = "The name of the secret containing the tls certificate values"
+  default     = ""
+}
+
+variable "catalog" {
+  type        = string
+  description = "The catalog source that should be used to deploy the operator"
+  default     = "ibm-operator-catalog"
+}
+
 variable "operator_namespace" {
   type        = string
   description = "operator namespace"
