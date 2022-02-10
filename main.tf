@@ -47,7 +47,7 @@ module setup_clis {
 
 resource null_resource create_subcription_yaml {
   provisioner "local-exec" {
-    command = "${path.module}/scripts/create-subscription-yaml.sh '${local.subscription_name}' '${local.subscription_yaml_dir}'"
+    command = "${path.module}/scripts/create-yaml.sh '${local.subscription_name}' '${local.subscription_yaml_dir}'"
 
     environment = {
       VALUES_CONTENT = yamlencode(local.subscription_content)
@@ -58,7 +58,7 @@ resource null_resource create_subcription_yaml {
 resource null_resource create_instance_yaml {
   depends_on = [null_resource.create_subcription_yaml]
   provisioner "local-exec" {
-    command = "${path.module}/scripts/create-instance-yaml.sh '${local.name}' '${local.instance_yaml_dir}'"
+    command = "${path.module}/scripts/create-yaml.sh '${local.name}' '${local.instance_yaml_dir}'"
 
     environment = {
       VALUES_CONTENT = yamlencode(local.instance_content)
