@@ -5,10 +5,34 @@ output "name" {
   depends_on  = [null_resource.setup_gitops_instance]
 }
 
+output "inst_name" {
+  description = "The name of the module"
+  value       = local.instance_content.name
+  depends_on  = [null_resource.setup_gitops_instance]
+}
+
 output "sub_chart" {
   description = "The name of Subscription chart"
   value       = local.subscription_name
   depends_on  = [null_resource.setup_gitops_instance]
+}
+
+output "sub_name" {
+  description = "The name of Subscription"
+  value       = local.subscription_content.name
+  depends_on  = [null_resource.setup_gitops_instance]
+}
+
+output "operator_namespace" {
+  description = "Operator Namespace ibm-common-services"
+  value       = var.operator_namespace
+  depends_on  = [null_resource.setup_gitops_instance.]
+}
+
+output "cpd_namespace" {
+  description = "CPD Namespcae"
+  value       = var.cpd_namespace
+  depends_on  = [null_resource.setup_gitops_instance.]
 }
 
 output "branch" {
