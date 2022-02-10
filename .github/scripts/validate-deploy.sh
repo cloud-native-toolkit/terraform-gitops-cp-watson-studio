@@ -22,10 +22,6 @@ cd .testrepo || exit 1
 
 find . -name "*"
 
-echo "******************"
-
-ls argocd/2-services/cluster/default/instances
-
 if [[ ! -f "argocd/${LAYER}/cluster/${SERVER_NAME}/${TYPE}/${NAMESPACE}-${SUBSCRIPTION_CHART}.yaml" ]]; then
   echo "ArgoCD config missing - argocd/${LAYER}/cluster/${SERVER_NAME}/${TYPE}/${NAMESPACE}-${SUBSCRIPTION_CHART}.yaml"
   exit 1
