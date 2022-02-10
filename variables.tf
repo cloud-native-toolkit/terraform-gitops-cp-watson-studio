@@ -113,7 +113,7 @@ variable "operator_namespace" {
 variable "cpd_namespace" {
   type        = string
   description = "cpd namespace"
-  default     = ""
+  default     = "cpd"
 }
 
 
