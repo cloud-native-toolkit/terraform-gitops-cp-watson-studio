@@ -24,10 +24,7 @@ find . -name "*"
 
 echo "******************"
 
-DIR="argocd/${LAYER}/cluster/${SERVER_NAME}/${TYPE}/"
-for entry in "$DIR"/*; do
-  echo "$entry"
-done
+ls "argocd/${LAYER}/cluster/${SERVER_NAME}/${TYPE}"
 
 if [[ ! -f "argocd/${LAYER}/cluster/${SERVER_NAME}/${TYPE}/${NAMESPACE}-${SUBSCRIPTION_CHART}.yaml" ]]; then
   echo "ArgoCD config missing - argocd/${LAYER}/cluster/${SERVER_NAME}/${TYPE}/${NAMESPACE}-${SUBSCRIPTION_CHART}.yaml"
