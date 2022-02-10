@@ -7,7 +7,6 @@ resource null_resource write_outputs {
       OUTPUT = jsonencode({
         name        = module.cp-watson-studio.name
         sub_chart   = module.cp-watson-studio.sub_chart
-        inst_chart  = module.cp-watson-studio.inst_chart
         branch      = module.cp-watson-studio.branch
         namespace   = module.cp-watson-studio.namespace
         server_name = module.cp-watson-studio.server_name
