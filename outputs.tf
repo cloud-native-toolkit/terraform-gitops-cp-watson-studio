@@ -26,13 +26,13 @@ output "sub_name" {
 output "operator_namespace" {
   description = "Operator Namespace ibm-common-services"
   value       = var.operator_namespace
-  depends_on  = [null_resource.setup_gitops_instance.]
+  depends_on  = [null_resource.setup_gitops_instance]
 }
 
 output "cpd_namespace" {
   description = "CPD Namespcae"
   value       = var.cpd_namespace
-  depends_on  = [null_resource.setup_gitops_instance.]
+  depends_on  = [null_resource.setup_gitops_instance]
 }
 
 output "branch" {
