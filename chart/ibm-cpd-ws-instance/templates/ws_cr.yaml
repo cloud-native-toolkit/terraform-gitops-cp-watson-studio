@@ -1,0 +1,7 @@
+apiVersion: ws.cpd.ibm.com/v1beta1
+kind: WS
+metadata:
+  name: {{ .Values.name }}
+  namespace: {{ .Values.cpd_namespace }}
+spec:
+  {{- toYaml .Values.spec | nindent 2 }}
