@@ -63,7 +63,6 @@ done
 
 sleep 30
 INST_STATUS=$(kubectl get WS ws-cr -n "${CPD_NAMESPACE}" -o jsonpath='{.status.wsStatus} {"\n"}')
-
 echo "Watson Studio WS/ws-cr is ${INST_STATUS}"
 
 cd ..
