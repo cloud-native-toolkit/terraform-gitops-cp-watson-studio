@@ -35,7 +35,7 @@ locals {
   
   layer = "services"
   operator_type  = "operators"
-  type = "instances"
+  type = "base"
   application_branch = "main"
   namespace = var.namespace
   layer_config = var.gitops_config[local.layer]
