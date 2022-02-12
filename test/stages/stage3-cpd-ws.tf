@@ -7,5 +7,6 @@ module "cp-watson-studio" {
   namespace = module.gitops_namespace.name
   kubeseal_cert = module.gitops.sealed_secrets_cert
   operator_namespace= module.gitops_cp4d_operator.namespace
-  cpd_namespace = module.cp4d-instance.namespace
+  cpd_namespace = "gitops-cp4d-instance"
+  # module.cp4d-instance.namespace
 }
