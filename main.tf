@@ -99,7 +99,6 @@ resource null_resource create_instance_yaml {
   }
 }
 
-
 resource null_resource setup_gitops_instance {
   depends_on = [null_resource.create_instance_yaml]
 
