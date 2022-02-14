@@ -33,8 +33,12 @@ locals {
       }               
     }  
   
+  # layer = "services"
+  # type = "base"
+  # application_branch = "main"
   layer = "services"
-  type = "base"
+  operator_type  = "operators"
+  type  = "instances"
   application_branch = "main"
   namespace = var.namespace
   layer_config = var.gitops_config[local.layer]
@@ -74,7 +78,7 @@ resource null_resource setup_gitops_subscription {
     yaml_dir = local.subscription_yaml_dir
     server_name = var.server_name
     layer = local.layer
-    type = local.type
+    type = local.operator_type
     git_credentials = yamlencode(var.git_credentials)
     gitops_config   = yamlencode(var.gitops_config)
     bin_dir = local.bin_dir
