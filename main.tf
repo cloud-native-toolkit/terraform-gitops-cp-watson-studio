@@ -32,10 +32,6 @@ locals {
       storageClass = "portworx-shared-gp3"
       }               
     }  
-  
-  # layer = "services"
-  # type = "base"
-  # application_branch = "main"
   layer = "services"
   operator_type  = "operators"
   type  = "instances"
@@ -54,17 +50,6 @@ resource null_resource create_subcription_yaml {
 
     environment = {
       VALUES_CONTENT = yamlencode(local.subscription_content)
-    }
-  }
-}
-
-resource null_resource create_instance_yaml {
-  depends_on = [null_resource.create_subcription_yaml]
-  provisioner "local-exec" {
-    command = "${path.module}/scripts/create-yaml.sh '${local.name}' '${local.instance_yaml_dir}'"
-
-    environment = {
-      VALUES_CONTENT = yamlencode(local.instance_content)
     }
   }
 }
@@ -104,8 +89,19 @@ resource null_resource setup_gitops_subscription {
   }
 }
 
+resource null_resource create_instance_yaml {
+  provisioner "local-exec" {
+    command = "${path.module}/scripts/create-yaml.sh '${local.name}' '${local.instance_yaml_dir}'"
+
+    environment = {
+      VALUES_CONTENT = yamlencode(local.instance_content)
+    }
+  }
+}
+
+
 resource null_resource setup_gitops_instance {
-  depends_on = [null_resource.create_instance_yaml, null_resource.setup_gitops_subscription]
+  depends_on = [null_resource.create_instance_yaml]
 
   triggers = {
     name = local.name
