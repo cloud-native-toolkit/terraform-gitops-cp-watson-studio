@@ -53,6 +53,10 @@ else
   sleep 30
 fi
 
+echo "OPERATOR_NAMESPACE ***** "${OPERATOR_NAMESPACE}""
+echo "SUBSCRIPTION_NAME *****"${SUBSCRIPTION_NAME}""
+sleep 15
+
 CSV=$(kubectl get sub -n "${OPERATOR_NAMESPACE}" "${SUBSCRIPTION_NAME}" -o jsonpath='{.status.installedCSV} {"\n"}')
 SUB_STATUS=0
 while [ $SUB_STATUS != 1 ]; do
@@ -61,6 +65,7 @@ while [ $SUB_STATUS != 1 ]; do
   echo "Waiting for subscription/${SUBSCRIPTION_NAME} in ${OPERATOR_NAMESPACE}"
 done
 
+echo "CPD_NAMESPACE *****"${CPD_NAMESPACE}""
 sleep 30
 INST_STATUS=$(kubectl get WS ws-cr -n "${CPD_NAMESPACE}" -o jsonpath='{.status.wsStatus} {"\n"}')
 echo "Watson Studio WS/ws-cr is ${INST_STATUS}"
