@@ -58,6 +58,7 @@ echo "SUBSCRIPTION_NAME *****"${SUBSCRIPTION_NAME}""
 sleep 15
 
 CSV=$(kubectl get sub -n "${OPERATOR_NAMESPACE}" "${SUBSCRIPTION_NAME}" -o jsonpath='{.status.installedCSV} {"\n"}')
+
 SUB_STATUS=0
 while [ $SUB_STATUS != 1 ]; do
   sleep 15
