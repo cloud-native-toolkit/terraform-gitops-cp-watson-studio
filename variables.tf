@@ -74,6 +74,12 @@ variable "kubeseal_cert" {
   default     = ""
 }
 
+variable "cluster_ingress_hostname" {
+  type        = string
+  description = "Ingress hostname of the IKS cluster."
+  default     = ""
+}
+
 variable "server_name" {
   type        = string
   description = "The name of the server"
