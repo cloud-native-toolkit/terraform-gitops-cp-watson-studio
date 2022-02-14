@@ -16,7 +16,7 @@ jobs:
     container: quay.io/ibmgaragecloud/cli-tools:v0.15
 
     strategy:
-      matrix:        
+      matrix:
         testcase:
           - ocp4_latest_gitops_cp4d
       #      max-parallel: 1
@@ -43,6 +43,7 @@ jobs:
           org="${GIT_ORG:-cloud-native-toolkit-test}"
           echo "Org: $org"
           echo "::set-output name=org::$org"
+
       - name: Verify deploy on ${{ matrix.testcase }}
         uses: cloud-native-toolkit/action-module-verify-deploy@main
         with:
