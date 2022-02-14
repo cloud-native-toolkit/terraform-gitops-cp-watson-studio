@@ -1,0 +1,5 @@
+{
+    "shellcheck.enable": false,
+    "shellcheck.enableQuickFix": false,
+    "shellcheck.run": "manual"
+}
