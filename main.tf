@@ -34,7 +34,6 @@ locals {
     }  
   
   layer = "services"
-  operator_type  = "operators"
   type = "base"
   application_branch = "main"
   namespace = var.namespace
