@@ -54,7 +54,7 @@ module cs_pull_secret {
   git_credentials = module.gitops.git_credentials
   server_name = module.gitops.server_name
   kubeseal_cert = module.gitops.sealed_secrets_cert
-  namespace = var.cpd_common_services_namespace
+  namespace = var.cpd_operator_namespace
   docker_username = "cp"
   docker_password = var.cp_entitlement_key
   docker_server   = "cp.icr.io"
@@ -70,7 +70,7 @@ module cpd_pull_secret {
   git_credentials = module.gitops.git_credentials
   server_name = module.gitops.server_name
   kubeseal_cert = module.gitops.sealed_secrets_cert
-  namespace = var.cpd_operator_namespace
+  namespace = var.cpd_namespace
   docker_username = "cp"
   docker_password = var.cp_entitlement_key
   docker_server   = "cp.icr.io"
