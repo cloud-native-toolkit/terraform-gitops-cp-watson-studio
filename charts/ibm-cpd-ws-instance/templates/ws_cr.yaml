@@ -5,8 +5,8 @@ metadata:
   namespace: {{ .Values.cpd_namespace }}
 spec:
   license:
-    accept: true
-    license: Enterprise     
-  version: {{ .Values.version }}   
-  storageVendor: {{ .Values.storageVendor }}  
-  storageClass: {{ .Values.storageClass }}   
+    accept: {{ .Values.spec.license.accept }}
+    license: {{ .Values.spec.license.license }}     
+  version: {{ .Values.spec.version }}   
+  storageVendor: {{ .Values.spec.storageVendor }}  
+  storageClass: {{ .Values.spec.storageClass }}   
