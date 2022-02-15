@@ -8,8 +8,9 @@ resource null_resource write_outputs {
         name        = module.cp-watson-studio.name
         inst_name   = module.cp-watson-studio.inst_name
         sub_chart   = module.cp-watson-studio.sub_chart
-        sub_name   = module.cp-watson-studio.sub_name
+        sub_name   = module.cp-watson-studio.sub_name 
         operator_namespace = module.cp-watson-studio.operator_namespace
+        cpd_namespace= module.cp-watson-studio.cpd_namespace
         branch      = module.cp-watson-studio.branch
         namespace   = module.cp-watson-studio.namespace
         server_name = module.cp-watson-studio.server_name
