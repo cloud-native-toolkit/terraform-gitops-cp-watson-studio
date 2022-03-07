@@ -27,7 +27,7 @@ locals {
         accept = "true"
         license = "Enterprise"
         }
-      version = "4.0.5"
+      version = "4.0.6"
       storageVendor = "portworx"
       storageClass = "portworx-shared-gp3"
       }               
