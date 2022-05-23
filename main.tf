@@ -28,8 +28,8 @@ locals {
         license = var.license
         }
       version = var.instance_version
-      storageVendor = var.storageVendor
-      storageClass = var.storageClass
+      storageVendor = var.storage_vendor
+      storageClass = var.storage_class
       }               
     }  
   layer = "services"
