@@ -10,7 +10,7 @@ locals {
   subscription_content = {
     name = "ibm-cpd-ws-operator-catalog-subscription"
     operator_namespace = var.operator_namespace
-    syncWave = "-5"
+    syncWave = var.sub_syncwave
     spec = {
       channel = var.operator_channel
       installPlanApproval = var.install_plan
@@ -22,6 +22,7 @@ locals {
   instance_content = {
     name = "ws-cr"
     cpd_namespace = var.cpd_namespace
+    syncwave = var.inst_syncwave
     spec = {
       license = {
         accept = "true"
